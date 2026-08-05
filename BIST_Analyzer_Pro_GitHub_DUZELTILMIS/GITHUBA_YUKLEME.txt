@@ -1,0 +1,30 @@
+İŞ AKIŞI GÖRÜNMÜYORSA NEDENİ
+=============================
+GitHub iş akışını yalnızca deponun TAM KÖKÜNDE bulunan şu yolda görür:
+.github/workflows/build-macos.yml
+
+ZIP açıldığında bu paketin içindeki DOSYALARI yükleyin; paketi taşıyan üst klasörü
+GitHub deposunun içine ayrıca klasör olarak koymayın.
+
+GitHub deponuzun ana ekranında doğrudan şunlar görünmeli:
+- .github
+- src
+- assets
+- package.json
+- README.md
+
+GitHub'da yalnızca "BIST_Analyzer_Pro_GitHub_DUZELTILMIS" adlı tek klasör
+ görünüyorsa dosyalar bir seviye aşağıda kalmıştır ve Actions iş akışını bulamaz.
+
+HIZLI DÜZELTME
+==============
+1. GitHub deposunda Add file > Create new file seçin.
+2. Dosya adına aynen şunu yazın:
+   .github/workflows/build-macos.yml
+3. Bu paketteki IS_AKISI_KOPYASI.yml dosyasını açıp tamamını kopyalayın.
+4. GitHub düzenleyicisine yapıştırın.
+5. Commit changes düğmesine basın.
+6. Actions sekmesine girin.
+7. Build macOS DMG > Run workflow seçin.
+
+Bu sürüm Intel Mac ve macOS Catalina 10.15+ hedefiyle hazırlanmıştır.

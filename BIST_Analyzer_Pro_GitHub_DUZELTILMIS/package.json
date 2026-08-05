@@ -1,0 +1,48 @@
+{
+  "name": "bist-analyzer-pro",
+  "version": "0.2.0",
+  "description": "BIST VIDYA + EMA desktop analyzer",
+  "main": "src/main.js",
+  "author": "OpenAI",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:mac:x64": "electron-builder --mac dmg zip --x64"
+  },
+  "dependencies": {
+    "csv-parse": "^6.1.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "22.3.27",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "com.bistanalyzer.pro",
+    "productName": "BIST Analyzer Pro",
+    "asar": true,
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.finance",
+      "target": ["dmg", "zip"],
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "identity": null,
+      "minimumSystemVersion": "10.15.0"
+    },
+    "dmg": {
+      "title": "BIST Analyzer Pro",
+      "contents": [
+        {"x": 130, "y": 220},
+        {"x": 410, "y": 220, "type": "link", "path": "/Applications"}
+      ]
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
